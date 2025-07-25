@@ -1,0 +1,21 @@
+venv/
+
+__pycache__/
+*.pyc
+
+# IDE and OS-specific files
+.vscode/
+.idea/
+.DS_Store
+
+toa_filtered_near_stations/
+Final_Matched_Data.csv
+
+# IMPORTANT: Large data folders
+# NEVER upload large datasets to GitHub.
+Aeronet Merging AOD FMF/Merged Ground Truth/
+Aeronet Merging AOD FMF/AOD/
+Aeronet Merging AOD FMF/FMF/
+TOA reflectance and Cloud/Himawari Data/
+TOA reflectance and Cloud/Cloud Mask Data/
+List of Files needed/himawari_timestamps_to_download.txt
