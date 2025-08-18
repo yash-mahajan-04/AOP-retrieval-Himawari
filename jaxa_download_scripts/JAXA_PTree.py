@@ -4,10 +4,13 @@ from datetime import datetime, timedelta
 import xarray as xr
 from tqdm import tqdm
 import getpass
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # 🔐 FTP Credentials
-USERNAME = ""
-PASSWORD = ""
+USERNAME = os.getenv("FTP_USERNAME")
+PASSWORD = os.getenv("FTP_PWD")
 
 # 📅 Date Range
 START_DATE = "2016-09-12"

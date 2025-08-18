@@ -2,10 +2,12 @@ import os
 from ftplib import FTP
 import xarray as xr
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 
+load_dotenv()
 # 🔐 FTP Credentials
-USERNAME = ""
-PASSWORD = ""
+USERNAME = os.getenv("FTP_USERNAME")
+PASSWORD = os.getenv("FTP_PWD")
 
 # 📂 FTP Server
 FTP_SERVER = "ftp.ptree.jaxa.jp"
