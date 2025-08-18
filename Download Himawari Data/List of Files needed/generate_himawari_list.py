@@ -19,7 +19,10 @@ AOD_THRESHOLD = 0.4
 
 
 # --- Configuration ---
-GROUND_DATA_FILE = "../Aeronet Merging AOD FMF/Merged Ground Truth/AERONET_groundtruth_ALL.csv"
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+GROUND_DATA_FILE = os.path.join(SCRIPT_DIR, "../../Aeronet Merging AOD FMF/Merged Ground Truth/AERONET_groundtruth_ALL.csv")
 OUTPUT_FILE = "himawari_timestamps_to_download_filtered.txt"
 SATELLITE_INTERVAL_MINUTES = 10 # Himawari's 10-minute interval
 
