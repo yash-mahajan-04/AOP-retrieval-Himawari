@@ -2,15 +2,15 @@ import pandas as pd
 import os
 
 # --- NEW: FILTERS TO REDUCE FILE COUNT ---
-# 1. Filter by daylight hours (highly recommended)
+# 1. Filter by daylight hours
 # This assumes the 'datetime' column in your CSV is in UTC.
-FILTER_BY_DAYLIGHT_HOURS = True
-START_HOUR_UTC = 7  # 7:00 UTC
+FILTER_BY_DAYLIGHT_HOURS = False
+START_HOUR_UTC = 1  # 1:00 UTC
 END_HOUR_UTC = 17 # 17:59 UTC
 
 # 2. Make the temporal matching window stricter
 REDUCE_TIME_WINDOW = True
-NEW_TIME_DELTA_MINUTES = 15 # Match +/- 15 minutes instead of 30
+NEW_TIME_DELTA_MINUTES = 30 # Match +/- 30 minutes
 
 # 3. (Optional) Filter by a minimum AOD value to focus on hazy days
 # To use this, change to True and set a threshold.
@@ -23,7 +23,7 @@ AOD_THRESHOLD = 0.4
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 GROUND_DATA_FILE = os.path.join(SCRIPT_DIR, "../../Aeronet Merging AOD FMF/Merged Ground Truth/AERONET_groundtruth_ALL.csv")
-OUTPUT_FILE = "himawari_timestamps_to_download_filtered.txt"
+OUTPUT_FILE = "himawari_timestamps_to_download_total.txt"
 SATELLITE_INTERVAL_MINUTES = 10 # Himawari's 10-minute interval
 
 
