@@ -15,7 +15,8 @@ The system is designed to be resilient and support multiple users working in par
         -   `download_progress.json`: A critical file that tracks the download progress for both data types across all years. **This file should be regularly committed to Git.**
     -   **/List of Files needed**: Contains the scripts and lists for generating the download queue.
         -   `generate_himawari_list.py`: A preparatory script that creates the master "to-do" list of files to download based on ground data.
-        -   `himawari_timestamps_to_download_filtered.txt`: The master list of all timestamps that need to be downloaded.
+        -   `himawari_timestamps_to_download_filtered.txt`: This is a filtered version of the master list of all timestamps that need to be downloaded.
+        -   `subsample_list.py`: A script which subsamples the original master list to create a distributed and fitered version with less number of timestamps.
 
 ---
 ## ⚙️ Setup Instructions
@@ -63,6 +64,13 @@ This step creates the master list of timestamps to download. This usually only n
 ```bash
 python "Download Himawari Data/List of Files needed/generate_himawari_list.py"
 ```
+After running above script, you need to run the following command -
+```bash
+python "Download Himawari Data/List of Files needed/subsample_list.py"
+```
+This will create the final filtered list which will be used in the project.
+
+Note: You may not need to do this step because the list is already available on the repository.
 
 ### Step 2: Run the Orchestrator
 This is the main step for downloading data. The orchestrator script handles everything automatically.
