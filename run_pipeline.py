@@ -2,6 +2,7 @@ import subprocess
 
 scripts = [
     # "Aeronet Merging AOD FMF/aeronet_v3.py",
+    # "Pixels Close To Stations/precompute_station_masks.py"
     "TOA reflectance and Cloud/main_v3.py",
     "Spatial Temporal Matching/datetime_latlon_v5.py",
 ]
